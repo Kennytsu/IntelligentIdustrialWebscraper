@@ -1,1 +1,1 @@
-# IntelligentIdustrialWebscraper
+# Intelligent Idustrial Webscraper
