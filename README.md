@@ -1,4 +1,7 @@
-<img src="/img/logo.png" alt="Logo Picture" width="400" length="400" #gh-light-mode-only/> <img src="/img/dark_logo.png" alt="Logo Picture" width="400" length="400" #gh-dark-mode-only/>
+<picture>
+  <source srcset="/img/dark_logo.png" media="(prefers-color-scheme: dark)" />
+  <img src="/img/logo.png" alt="Logo Picture" width="400" height="400" />
+</picture>
 
 
 # Intelligent Industrial Webscraper
@@ -14,7 +17,7 @@ Starting process of the development of an intelligent webscraper that is leveled
 - [Features](#features)
 - [Contributing](#contributing) -->
 - [License](#license)
-- [Current tasks](#current)
+- [Current Tasks](#current)
 - [Contact](#contact)
 <!-- - [Acknowledgements](#acknowledgements) -->
 
