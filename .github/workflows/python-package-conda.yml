@@ -25,7 +25,7 @@ jobs:
         use-fast-mirror: true
 
     - name: Install dependencies
-      run: conda env update --file ./github/workflows/environment.yml --name webscraper_env
+      run: conda env update --file environment.yml --name webscraper_env
 
     - name: Lint with flake8
       run: |
