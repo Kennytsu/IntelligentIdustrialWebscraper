@@ -1,0 +1,40 @@
+name: Python Pipeline using Conda
+
+on: [push]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 5
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.10.12'
+
+    - name: Set up Miniconda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        python-version: 3.10.12
+        activate-environment: webscraper_env
+        use-fast-mirror: true
+
+    - name: Install dependencies
+      run: conda env update --file environment.yml --name webscraper_env
+
+    - name: Lint with flake8
+      run: |
+        conda install -c conda-forge flake8
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Test with pytest
+      run: |
+        conda install -c conda-forge pytest
+        pytest
+
