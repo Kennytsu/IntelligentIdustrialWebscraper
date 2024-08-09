@@ -1,5 +1,5 @@
 <img src="/img/logo.png" alt="Logo Picture" width="400" height="400" style="display:block;" class="gh-light-mode-only"/>
-<img src="/img/dark_logo.png" alt="Logo Picture" width="400" height="400" style="display:none;" class="gh-dark-mode-only"/>
+<img src="/img/dark_logo.png" alt="Logo Picture" width="400" height="400" style="display:block;" class="gh-dark-mode-only"/>
 
 
 # Intelligent Industrial Webscraper
