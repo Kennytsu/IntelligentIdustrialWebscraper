@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import os
 
+
 # Standard Amazon Webpage
 url = 'https://www.amazon.com'
 
