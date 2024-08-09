@@ -4,10 +4,10 @@
 </picture>
 
 
-# Intelligent Industrial Webscraper
+# Intelligent Industrial Web Scraper
 
 
-Starting process of the development of an intelligent webscraper that is leveled for industrial use. The webscraper will be able to scan multiple sites, extract information, format it and then display the result to the user.
+Starting process of the development of an intelligent web scraper that is leveled for industrial use. The web scraper will be able to scan multiple sites, extract information, format it, and then display the result to the user.
 
 
 ## Table of Contents
@@ -29,7 +29,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Current Tasks
 
-Buiding the core for the webscraper with focus on aquiring the price informations on Amazon.
+Building the core for the web scraper with a focus on acquiring the price information on Amazon.
 
 
 ### Contact
