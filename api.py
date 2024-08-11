@@ -28,12 +28,57 @@ if response.status_code == 200:
   soup = BeautifulSoup(response.text, 'html.parser')
     
   # Find the span element with the class 'search-card-e-price__original'
-  price_elements = soup.find_all('span', class_='search-card-e-price')
-  print(price_elements)
+  name_elements = soup.find_all('a',href=True)
+  name_text = []
   
-  for idx, price_element in enumerate(price_elements):
-    price = price_element.text.strip().replace('\xa0', ' ')
-    print(f"Price {idx + 1}: {price}")
+  for name in name_elements:
+    if name.find('span'):
+      name_text.append(name.find('span').text.strip())
+      
+  with open('response.txt','w') as text_write:
+    for idx,name in enumerate(name_text):
+      if idx > 18:
+        break
+      text_write.write(f'{idx}:{name}')
+      text_write.write('\n')
+      text_write.write('\n')
+  
+  name_text.clear()
+  
+  name_elements = soup.find_all(class_='card-info list-card-layout__info')
+  price_elements = soup.find_all('div', class_="search-card-e-price-main")
+  for idx,name in enumerate(name_elements):
+    if name.find('span'):
+      name_text.append(name.find('span').text.strip())
+    
+    
+    if price_elements[idx]:
+      name_text.append(price_elements[idx].text.strip().replace('\xa0', ' '))
+
+  with open('response.txt','a') as text_write:
+    for idx,name in enumerate(name_text):
+      if idx > 18:
+        break
+      text_write.write(f'{idx}:{name}')
+      text_write.write('\n')
+      text_write.write('\n')
+        
+      
+      
+  
+  
+  # with open('response.txt','w') as text_write:
+  #   for idx, name in enumerate(name_elements):
+  #     name_2 = name.text.strip().replace('\xa0', ' ')
+  #     price_2 = price_elements[idx].text.strip().replace('\xa0', ' ')
+  #     text_write.write(name_2)
+  #     text_write.write('\n')
+  #     text_write.write(price_2)
+  #     text_write.write('\n')
+  #     text_write.write('\n')
+  #     text_write.write('\n')
+      
+  
 elif ~debug:
   print(f"Failed to retrieve data. Status code: {response.status_code}")
 else:
