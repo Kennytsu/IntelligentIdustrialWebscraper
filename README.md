@@ -29,7 +29,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Current Tasks
 
-Building the core for the web scraper with a focus on acquiring the price information on Amazon.
+Building the core for the web scraper with a focus on acquiring the price information on Alibaba.
 
 
 ### Contact
