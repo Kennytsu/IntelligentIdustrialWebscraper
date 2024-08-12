@@ -45,8 +45,11 @@ if response.status_code == 200:
   
   name_text.clear()
   
-  name_elements = soup.find_all(class_='card-info list-card-layout__info')
+  name_elements = soup.find_all('card-info list-card-layout__info')
+  print(len(name_elements))
+  
   price_elements = soup.find_all('div', class_="search-card-e-price-main")
+  print(len(price_elements))
   for idx,name in enumerate(name_elements):
     if name.find('span'):
       name_text.append(name.find('span').text.strip())
