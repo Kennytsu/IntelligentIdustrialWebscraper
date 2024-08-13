@@ -17,15 +17,18 @@ option.add_argument("--remote-debugging-port=9222")
 option.add_argument("--headless")
 driver = webdriver.Chrome(options=option)
 
-driver.get('http://alibaba.com')
+driver.get('https://www.alibaba.com/trade/search?spm=a2700.product_home_newuser.home_new_user_first_screen_fy23_pc_search_bar.associationItem_pos_0&tab=all&SearchText=elektro+scooter')
 driver.save_screenshot('screenshot.png')
 
 
 items = driver.find_elements(By.CLASS_NAME, "card-info")
 print(len(items))
 
+# Extract and send data to the backend
 
 driver.save_screenshot('screenshot.png')
 driver.quit()
+
+
 
 
