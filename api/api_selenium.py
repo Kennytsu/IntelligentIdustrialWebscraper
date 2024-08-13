@@ -17,12 +17,29 @@ option.add_argument("--remote-debugging-port=9222")
 option.add_argument("--headless")
 driver = webdriver.Chrome(options=option)
 
-driver.get('http://alibaba.com')
+driver.get('https://www.alibaba.com/trade/search?spm=a2700.product_home_newuser.home_new_user_first_screen_fy23_pc_search_bar.historyItem_pos_0&tab=all&SearchText=electric+scooter')
 driver.save_screenshot('screenshot.png')
 
 
 items = driver.find_elements(By.CLASS_NAME, "card-info")
 print(len(items))
+
+for i in items:
+        title = i.find_element(By.CLASS_NAME, "search-card-e-title").text
+        price = i.find_element(By.CLASS_NAME, "search-card-e-price-main").text
+        link = i.find_element(By.TAG_NAME, "a").get_attribute("href")
+
+        product = {
+            "title": title,
+            "price": price,
+            "link": link
+        }
+        
+        with open('response.txt','a') as text_write:
+            text_write.write(f'{product}')
+            text_write.write('\n')
+            text_write.write('\n')
+
 
 
 driver.save_screenshot('screenshot.png')
