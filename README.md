@@ -34,7 +34,7 @@ Building the core for the web scraper with a focus on acquiring the price inform
 
 ### Contact
 
-Feel free to reach out to us at [intelligent.webscraper.indust@gmail.com](mailto:intelligent.webscraper.indust@gmail.com)
+Feel free to reach out to us at [intelligent.webscraper.indust@gmail.com](mailto:intelligent.webscraper.indust@gmail.com)!
 
 
 
